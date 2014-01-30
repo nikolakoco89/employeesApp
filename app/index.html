@@ -35,6 +35,7 @@
                     <option value="firstName">First Name</option>
                     <option value="lastName">Last Name</option>
                 </select>
+                
                 <ul>
                     <li ng-repeat="employee in employees | filter:query | orderBy:orderProp">
                         <a href="#/{{employee._id}}" class="thumb"><img ng-src="{{employee.photoUrl}}" style="width:150px;min-height:150px;" /></a>
