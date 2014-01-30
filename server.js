@@ -6,7 +6,6 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var ObjectId = require('mongoose').Types.ObjectId;
 
 // mongodb connection and app configuration
 mongoose.connect('mongodb://localhost/test');

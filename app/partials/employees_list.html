@@ -25,7 +25,7 @@
             </select>
 
             <ul>
-                <li ng-repeat="employee in employees | filter:query | orderBy:orderProp">
+                <li ng-repeat="employee in employees | filter:query | orderBy:orderProp" class="thumbnail employee-listing">
                     <a href="#/employees/{{employee._id}}" class="thumb"><img ng-src="{{employee.photoUrl}}" style="width:150px;min-height:150px;margin-bottom:5px" /></a>
                     <a href="#/employees/{{employee._id}}">{{employee.firstName}} {{employee.lastName}}</a>
                 </li>

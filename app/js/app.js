@@ -3,7 +3,8 @@
  */
 var employeesApp = angular.module('employeesApp', [
     'ngRoute',
-    'EmployeesControllers'
+    'EmployeesControllers',
+    'employeeAppAnimations'
 ]);
 
 employeesApp.config(['$routeProvider',
