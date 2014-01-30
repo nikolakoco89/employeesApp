@@ -15,7 +15,7 @@ employeesApp.config(['$routeProvider',
             }).
             when('/employees/:employeeId', {
                 templateUrl: 'partials/employees_details.html',
-                controller: 'PhoneDetailCtrl'
+                controller: 'EmployeeDetailsCtrl'
             }).
             otherwise({
                 redirectTo: '/employees'

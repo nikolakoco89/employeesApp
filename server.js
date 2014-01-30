@@ -6,6 +6,7 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
+var ObjectId = require('mongoose').Types.ObjectId;
 
 // mongodb connection and app configuration
 mongoose.connect('mongodb://localhost/test');
@@ -28,12 +29,31 @@ var Employee = mongoose.model('Employee', {
 // api
 // GET
 app.get('/api/employees', function(req, res) {
+    console.log("GET");
     Employee.find(function(err, employees) {
         if(err) {
             res.send(err);
         }
 
-        res.json(employees)
+        res.json(employees);
+    });
+});
+
+// Get by ID
+app.get('/api/employees/:employeeId', function(req, res) {
+    Employee.findById(req.params.employeeId, function(err, employee) {
+        if(err) {
+            res.send(err);
+        }
+
+        res.json(employee);
+    });
+    Employee.find(function(err, employees) {
+        if(err) {
+            res.send(err);
+        }
+
+        res.json(employees);
     });
 });
 

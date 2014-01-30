@@ -32,3 +32,15 @@ EmployeesControllers.controller('EmployeesCtrl', ['$scope', '$http', function ($
             });
     };
 }]);
+
+EmployeesControllers.controller('EmployeeDetailsCtrl', ['$scope', '$routeParams', '$http',
+    function($scope, $routeParams, $http) {
+        console.log('Pred get i id: ' + $routeParams.employeeId);
+        $http.get('/api/employees/' + $routeParams.employeeId)
+            .success(function(data) {
+                console.log('Success ama: ' + data);
+                $scope.employee = data;
+            }).error(function(data) {
+                console.log('Error: ' + data);
+            });
+    }]);
