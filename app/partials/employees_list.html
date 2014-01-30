@@ -27,10 +27,13 @@
             </select>
 
             <ul>
-                <li ng-repeat="employee in employees | filter:query | orderBy:orderProp" class="thumbnail employee-listing">
-                    <a href="#/employees/{{employee._id}}" class="thumb"><img ng-src="{{employee.photoUrl}}" style="width:150px;min-height:150px;margin-bottom:5px" /></a>
+                <li ng-repeat="employee in employees | filter:query | orderBy:orderProp"
+                    class="thumbnail employee-listing">
+                    <a href="#/employees/{{employee._id}}" class="thumb"><img ng-src="{{employee.photoUrl}}"
+                                                                              style="width:150px;min-height:150px;margin-bottom:5px"/></a>
                     <a href="#/employees/{{employee._id}}">{{employee.firstName}} {{employee.lastName}}</a>
-                    <button class="btn btn-danger btn-lg" ng-click="removeEmployee(employee._id)">Remove</button>
+
+                    <button class="btn btn-danger" style="float: right; margin-top: 60px" ng-click="removeEmployee(employee._id)">Remove</button>
                 </li>
             </ul>
         </div>
