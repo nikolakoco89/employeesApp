@@ -1,0 +1,11 @@
+{
+    "name": "ISENMN_Employees",
+    "version": "0.0.1",
+    "description": "ISENMN_Employees_description",
+    "main": "server.js",
+    "author": "nikolakoco",
+    "dependencies": {
+        "express": "~3.4.4",
+        "mongoose": "~3.8.5"
+    }
+}

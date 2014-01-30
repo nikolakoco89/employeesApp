@@ -1,6 +1,6 @@
-﻿var employeesApp = angular.module('employeesApp', []);
+﻿var EmployeesControllers = angular.module('EmployeesControllers', []);
 
-function EmployeesCtrl($scope, $http) {
+EmployeesControllers.controller('EmployeesCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
 
     $http.get('/api/employees')
@@ -31,4 +31,4 @@ function EmployeesCtrl($scope, $http) {
                 console.log('Error: ' + data);
             });
     };
-}
+}]);
