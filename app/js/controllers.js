@@ -31,11 +31,12 @@ EmployeesControllers.controller('EmployeesCtrl', ['$scope', '$http', function ($
                 console.log('Error: ' + data);
             });
     };
+
+    $scope.orderProp = 'firstName';
 }]);
 
 EmployeesControllers.controller('EmployeeDetailsCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
-        console.log('Pred get i id: ' + $routeParams.employeeId);
         $http.get('/api/employees/' + $routeParams.employeeId)
             .success(function(data) {
                 console.log('Success ama: ' + data);
