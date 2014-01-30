@@ -47,13 +47,6 @@ app.get('/api/employees/:employeeId', function(req, res) {
 
         res.json(employee);
     });
-    Employee.find(function(err, employees) {
-        if(err) {
-            res.send(err);
-        }
-
-        res.json(employees);
-    });
 });
 
 // POST
