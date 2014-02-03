@@ -45,3 +45,9 @@ EmployeesControllers.controller('EmployeeDetailsCtrl', ['$scope', '$routeParams'
                 console.log('Error: ' + data);
             });
     }]);
+
+
+EmployeesControllers.controller('EmployeeAddNewCtrl', ['$scope',
+    function($scope) {
+
+    }]);
