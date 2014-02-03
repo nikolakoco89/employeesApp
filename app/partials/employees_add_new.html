@@ -1,1 +1,12 @@
-TEST
+<div class="container-fluid text-center">
+    <div class="row-fluid">
+        <form>
+            <div class="col-sm-4 col-sm-offset-4 text-center">
+                <input ng-model="formData.firstName" placeholder="First Name" class="form-control" style="margin-top: 10px">
+                <input ng-model="formData.lastName" placeholder="Last Name" class="form-control" style="margin-top: 10px">
+                <input ng-model="formData.photoUrl" placeholder="Photo URL" class="form-control" style="margin-top: 10px">
+                <button type="submit" class="btn btn-primary" ng-click="addEmployee()" style="margin-top: 10px; width: 100%">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
