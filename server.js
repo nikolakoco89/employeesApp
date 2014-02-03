@@ -28,8 +28,8 @@ var Employee = mongoose.model('Employee', {
 // api
 // GET
 app.get('/api/employees', function(req, res) {
-    console.log("GET");
     Employee.find(function(err, employees) {
+        console.log("Get");
         if(err) {
             res.send(err);
         }
@@ -41,6 +41,7 @@ app.get('/api/employees', function(req, res) {
 // Get by ID
 app.get('/api/employees/:employeeId', function(req, res) {
     Employee.findById(req.params.employeeId, function(err, employee) {
+        console.log("Get By ID");
         if(err) {
             res.send(err);
         }
@@ -56,6 +57,7 @@ app.post('/api/employees', function(req, res) {
         lastName : req.body.lastName,
         photoUrl : req.body.photoUrl
     }, function(err, employee) {
+        console.log("Post");
         if(err) {
             res.send(err);
         }
@@ -71,6 +73,7 @@ app.post('/api/employees', function(req, res) {
 // DELETE
 app.delete('/api/employees/:employee_id', function(req, res) {
     Employee.remove({_id : req.params.employee_id}, function (err, employee) {
+        console.log("Delete");
         if(err) {
             res.send(err);
         }
@@ -87,6 +90,12 @@ app.delete('/api/employees/:employee_id', function(req, res) {
 // application
 app.get('*', function(req, res) {
     res.sendfile('./app/index.html'); // load the single view file, angular will handle other views
+});
+
+app.get('/partials/employess_add_new.html', function(request, response) {
+    console.log("Vo Getot");
+    var name = request.params.name;
+    response.render('/partials/employees_add_new.html');
 });
 
 // start listening (start app)

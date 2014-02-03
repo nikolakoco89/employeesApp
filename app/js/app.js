@@ -11,11 +11,15 @@ employeesApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/employees', {
-                templateUrl: 'partials/employees_list.html',
+                templateUrl: '/partials/employees_list.html',
                 controller: 'EmployeesCtrl'
             }).
+			when('/employees/add_new', {
+                templateUrl: '/partials/employess_add_new.html',
+                controller: 'EmployeeAddNewCtrl'
+            }).
             when('/employees/:employeeId', {
-                templateUrl: 'partials/employees_details.html',
+                templateUrl: '/partials/employees_details.html',
                 controller: 'EmployeeDetailsCtrl'
             }).
             otherwise({
