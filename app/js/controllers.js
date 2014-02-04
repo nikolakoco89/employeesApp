@@ -1,8 +1,6 @@
 ﻿var EmployeesControllers = angular.module('EmployeesControllers', []);
 
 EmployeesControllers.controller('EmployeesCtrl', ['$scope', '$http', function ($scope, $http) {
-//    $scope.formData = {};
-
     $http.get('/api/employees')
         .success(function(data) {
             $scope.employees = data;
@@ -46,5 +44,16 @@ EmployeesControllers.controller('EmployeeAddNewCtrl', ['$scope', '$http', '$loca
                 }).error(function(data) {
                     console.log('Error: ' + data);
                 });
+        };
+    }]);
+
+EmployeesControllers.controller('EmployeeLoginCtrl', ['$scope', '$location',
+    function($scope, $location) {
+        $scope.verifyLogin = function() {
+            if($scope.formData.username == 'nikola' && $scope.formData.password) {
+                $scope.formData = {};
+                console.log('Successful Logging!');
+            }
+            $location.path( "/employees" );
         };
     }]);

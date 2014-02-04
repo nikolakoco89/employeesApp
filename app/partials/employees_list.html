@@ -1,30 +1,29 @@
-<div class="jumbotron text-center">
-    <h1>Employees App </h1>
-</div>
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span2">
-            <input ng-model="query" placeholder="Search" class="form-control" >
-            <a href="#/employees/add_new"><h3 style="margin-top: 50px">Add new</h3></a>
-
-            <!--<form>
-                <div>
-                    <input ng-model="formData.firstName" placeholder="First Name" class="form-control" style="margin-top: 10px">
-                    <input ng-model="formData.lastName" placeholder="Last Name" class="form-control" style="margin-top: 10px">
-                    <input ng-model="formData.photoUrl" placeholder="Photo URL" class="form-control" style="margin-top: 10px">
-                </div>
-                <button type="submit" class="btn btn-primary" ng-click="addEmployee()" style="margin-top: 10px; width: 100%">Add</button>
-            </form> -->
-
-            <h3 class="text-center"><span class="label label-info">Total number: {{employees.length}}</span></h3>
+            <a href="#/employees/add_new"><h3 class="text-center"><span class="label label-info">Add new</span></h3></a>
         </div>
 
         <div class="span10">
-            Sort by:
-            <select ng-model="orderProp" style="margin-bottom: 10px">
-                <option value="firstName">First Name</option>
-                <option value="lastName">Last Name</option>
-            </select>
+            <table>
+                <tr >
+                    <td><input ng-model="query" placeholder="Search" style="height: 28px"></td>
+                    <td>
+                        Sort by:
+                        <select ng-model="orderProp">
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
+                        </select>
+                    </td>
+                    <td>
+                        <h3 class="text-center" style="margin-bottom: 20px">
+                            <span class="label label-info">
+                                Total number: {{employees.length}}
+                            </span>
+                        </h3>
+                    </td>
+                </tr>
+            </table>
 
             <ul>
                 <li ng-repeat="employee in employees | filter:query | orderBy:orderProp"

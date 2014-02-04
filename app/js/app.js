@@ -10,6 +10,10 @@ var employeesApp = angular.module('employeesApp', [
 employeesApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
+            when('/employees/login', {
+                templateUrl: 'partials/employees_login.html',
+                controller: 'EmployeeLoginCtrl'
+            }).
             when('/employees', {
                 templateUrl: '/partials/employees_list.html',
                 controller: 'EmployeesCtrl'
@@ -23,6 +27,7 @@ employeesApp.config(['$routeProvider',
                 controller: 'EmployeeDetailsCtrl'
             }).
             otherwise({
-                redirectTo: '/employees'
+                redirectTo: '/employees/login'
             });
     }]);
+
