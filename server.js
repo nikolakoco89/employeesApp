@@ -92,12 +92,6 @@ app.get('*', function(req, res) {
     res.sendfile('./app/index.html'); // load the single view file, angular will handle other views
 });
 
-app.get('/partials/employess_add_new.html', function(request, response) {
-    console.log("Vo Getot");
-    var name = request.params.name;
-    response.render('/partials/employees_add_new.html');
-});
-
 // start listening (start app)
 app.listen(8080);
 console.log("App listening on port 8080");

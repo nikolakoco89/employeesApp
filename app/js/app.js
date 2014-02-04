@@ -14,8 +14,8 @@ employeesApp.config(['$routeProvider',
                 templateUrl: '/partials/employees_list.html',
                 controller: 'EmployeesCtrl'
             }).
-			when('/employees/add_new', {
-                templateUrl: '/partials/employess_add_new.html',
+            when('/employees/add_new', {
+                templateUrl: 'partials/employees_add_new.html',
                 controller: 'EmployeeAddNewCtrl'
             }).
             when('/employees/:employeeId', {
